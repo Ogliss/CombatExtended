@@ -2,6 +2,7 @@ using System;
 using Verse;
 using RimWorld;
 using UnityEngine;
+using System.Collections.Generic;
 
 namespace CombatExtended
 {
@@ -64,7 +65,8 @@ namespace CombatExtended
             explosion.applyDamageToExplosionCellsNeighbors = def.projectile.applyDamageToExplosionCellsNeighbors;
             explosion.chanceToStartFire = def.projectile.explosionChanceToStartFire;
             explosion.damageFalloff = def.projectile.explosionDamageFalloff;
-            explosion.StartExplosion(def.projectile.soundExplode);
+            //TODO: create an actual ignoredThings list
+            explosion.StartExplosion(def.projectile.soundExplode, new List<Thing>());
             explosion.armorPenetration = explosion.damAmount * 0.1f;
 
             //This code was disabled because it didn't run under previous circumstances. Could be enabled if necessary

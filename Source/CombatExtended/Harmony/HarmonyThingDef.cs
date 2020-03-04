@@ -58,10 +58,7 @@ namespace CombatExtended.Harmony
                         : def.fillPercent;
                     height *= CollisionVertical.MeterPerCellHeight;
 
-                    var newEntry = new StatDrawEntry(entry.category, (string)"CE_CoverHeight".Translate(), height.ToStringByStyle(ToStringStyle.FloatMaxTwo) + " m", entry.DisplayPriorityWithinCategory)
-                    {
-                        overrideReportText = (string)"CE_CoverHeightExplanation".Translate()
-                    };
+                    var newEntry = new StatDrawEntry(entry.category, "CE_CoverHeight".Translate(), height.ToStringByStyle(ToStringStyle.FloatMaxTwo) + " m", (string)"CE_CoverHeightExplanation".Translate(), entry.DisplayPriorityWithinCategory);
 
                     AccessTools.Field(__instance.GetType(), "$current").SetValue(__instance, newEntry);
                 }

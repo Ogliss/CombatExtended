@@ -60,7 +60,7 @@ namespace CombatExtended
         public void GenerateLoadoutFor(Pawn pawn)
         {
             if (!pawn.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation)
-                || (pawn.story.WorkTagIsDisabled(WorkTags.Violent) ?? false)
+                || (pawn.WorkTagIsDisabled(WorkTags.Violent))
                 || !pawn.RaceProps.ToolUser)
                 return;
 
