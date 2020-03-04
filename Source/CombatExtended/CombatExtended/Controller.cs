@@ -5,7 +5,7 @@ using System.Text;
 using RimWorld;
 using Verse;
 using UnityEngine;
-using CombatExtended.Harmony;
+using CombatExtended.CEHarmony;
 
 namespace CombatExtended
 {

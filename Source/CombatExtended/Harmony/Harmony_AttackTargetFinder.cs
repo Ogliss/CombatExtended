@@ -7,7 +7,7 @@ using HarmonyLib;
 using Verse;
 using Verse.AI;
 
-namespace CombatExtended.Harmony
+namespace CombatExtended.CEHarmony
 {
     [HarmonyPatch(typeof(AttackTargetFinder), "BestAttackTarget")]
     internal static class Harmony_AttackTargetFinder_BestAttackTarget

@@ -7,7 +7,7 @@ using Verse;
 using UnityEngine;
 using HarmonyLib;
 
-namespace CombatExtended.Harmony
+namespace CombatExtended.CEHarmony
 {
     [HarmonyPatch(typeof(JobGiver_DropUnusedInventory), "Drop")]
     public static class Harmony_JobGiver_DropUnusedInventory_Drop

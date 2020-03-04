@@ -22,22 +22,22 @@ using System.Collections.Generic;
  * 
  */
 
-namespace CombatExtended.Harmony
+namespace CombatExtended.CEHarmony
 {
     public static class HarmonyBase
     {
-        private static HarmonyInstance harmony = null;
+        private static Harmony harmony = null;
 
         /// <summary>
         /// Fetch CombatExtended's instance of Harmony.
         /// </summary>
         /// <remarks>One should only have a single instance of Harmony per Assembly.</remarks>
-        static internal HarmonyInstance instance
+        static internal Harmony instance
         {
             get
             {
                 if (harmony == null)
-                    harmony = harmony = HarmonyInstance.Create("CombatExtended.Harmony");
+                    harmony = harmony = new Harmony("CombatExtended.CEHarmony");
                 return harmony;
             }
         }

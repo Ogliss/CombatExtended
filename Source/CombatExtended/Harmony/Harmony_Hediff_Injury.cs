@@ -3,7 +3,7 @@ using System.Reflection.Emit;
 using HarmonyLib;
 using Verse;
 
-namespace CombatExtended.Harmony
+namespace CombatExtended.CEHarmony
 {
     static class Harmony_Hediff_Injury
     {

@@ -4,7 +4,7 @@ using HarmonyLib;
 using RimWorld;
 using Verse;
 
-namespace CombatExtended.Harmony
+namespace CombatExtended.CEHarmony
 {
     [HarmonyPatch(typeof(FireUtility), "ChanceToStartFireIn")]
     internal static class Harmony_FireUtility_ChanceToStartFireIn

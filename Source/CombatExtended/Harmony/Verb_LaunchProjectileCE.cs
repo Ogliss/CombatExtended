@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using HarmonyLib;
 using Verse;
 
-namespace CombatExtended.Harmony
+namespace CombatExtended.CEHarmony
 {
     [HarmonyPatch(typeof(Verb_LaunchProjectileCE), nameof(Verb_LaunchProjectileCE.TryStartCastOn))]
     internal static class Harmony_Verb_LaunchProjectileCE

@@ -7,7 +7,7 @@ using System.Reflection.Emit;
 using System;
 
 
-namespace CombatExtended.Harmony.Compatibility
+namespace CombatExtended.CEHarmony.Compatibility
 {
     [HarmonyPatch]
     class Harmony_Compat_RunAndGun

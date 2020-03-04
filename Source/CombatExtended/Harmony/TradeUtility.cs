@@ -4,7 +4,7 @@ using System.Reflection.Emit;
 using HarmonyLib;
 using Verse;
 
-namespace CombatExtended.Harmony
+namespace CombatExtended.CEHarmony
 {
     [HarmonyPatch(typeof(RimWorld.TradeUtility), "GetPricePlayerBuy")]
     internal static class TradeUtility

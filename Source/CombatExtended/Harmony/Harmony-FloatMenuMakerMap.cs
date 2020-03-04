@@ -9,7 +9,7 @@ using RimWorld;
 using UnityEngine;
 using Verse.AI;
 
-namespace CombatExtended.Harmony
+namespace CombatExtended.CEHarmony
 {
     /*
      * The additional item to be inserted adds learning information for CE when a weapon is selected for equipping.

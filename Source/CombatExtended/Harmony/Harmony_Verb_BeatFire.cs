@@ -7,7 +7,7 @@ using System.Reflection.Emit;
 using System.Text;
 using Verse;
 
-namespace CombatExtended.Harmony
+namespace CombatExtended.CEHarmony
 {
     class Harmony_Verb_BeatFire
     {

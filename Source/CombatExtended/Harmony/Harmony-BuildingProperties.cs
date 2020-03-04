@@ -8,7 +8,7 @@ using Verse;
 using UnityEngine;
 using HarmonyLib;
 
-namespace CombatExtended.Harmony
+namespace CombatExtended.CEHarmony
 {
     [HarmonyPatch(typeof(BuildingProperties), "SpecialDisplayStats")]
     static class Harmony_BuildingProperties_SpecialDisplayStats_Patch

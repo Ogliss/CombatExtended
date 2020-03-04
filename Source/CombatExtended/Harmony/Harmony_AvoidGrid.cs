@@ -4,7 +4,7 @@ using System.Reflection.Emit;
 using HarmonyLib;
 using Verse.AI;
 
-namespace CombatExtended.Harmony
+namespace CombatExtended.CEHarmony
 {
     [HarmonyPatch(typeof(AvoidGrid), "PrintAvoidGridAroundTurret")]
     internal static class Harmony_AvoidGrid_PrintAvoidGridAroundTurret

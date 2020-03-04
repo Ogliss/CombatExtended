@@ -22,7 +22,7 @@ using Verse.AI;
  * A couple of helper functions to turn a bunch of ifs into a single call since IL can use one of 6 instructions for local variable load/save.
  */
 
-namespace CombatExtended.Harmony
+namespace CombatExtended.CEHarmony
 {
     [HarmonyPatch(typeof(JobDriver_Wait), "CheckForAutoAttack")]
     static class Harmony_JobDriverWait_CheckForAutoAttack

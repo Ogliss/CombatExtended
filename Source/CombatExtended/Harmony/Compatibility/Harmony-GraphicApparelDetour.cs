@@ -6,7 +6,7 @@ using System.Reflection;
 using Verse;
 
 
-namespace CombatExtended.Harmony.Compatibility
+namespace CombatExtended.CEHarmony.Compatibility
 {
 
     [HarmonyPatch]

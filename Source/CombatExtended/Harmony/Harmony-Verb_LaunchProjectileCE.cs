@@ -5,7 +5,7 @@ using System.Reflection.Emit;
 using HarmonyLib;
 using Verse;
 
-namespace CombatExtended.Harmony
+namespace CombatExtended.CEHarmony
 {
     [HarmonyPatch(typeof(Verb_LaunchProjectileCE), "TryFindShootLineFromTo")]
     internal static class Verb_LaunchProjectileCE_RerouteTryFindShootLineFromTo

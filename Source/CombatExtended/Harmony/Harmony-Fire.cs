@@ -9,7 +9,7 @@ using Verse;
 using RimWorld;
 using UnityEngine;
 
-namespace CombatExtended.Harmony
+namespace CombatExtended.CEHarmony
 {
     [HarmonyPatch(typeof(Fire), "DoFireDamage")]
     internal static class Harmony_Fire_DoFireDamage
