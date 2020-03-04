@@ -31,8 +31,7 @@ namespace CombatExtended
             base.ProcessInput(ev);
             SoundDefOf.Tick_Tiny.PlayOneShotOnCamera();
             Targeter targeter = Find.Targeter;
-            //TODO: test equality (may need to write an equality function)
-            if (verb.CasterIsPawn && targeter.targetingSource != null && targeter.targetingSource.GetVerb == verb)
+            if (verb.CasterIsPawn && targeter.targetingSource != null && targeter.targetingSource.GetVerb.verbProps == verb.verbProps)
             {
                 Pawn casterPawn = verb.CasterPawn;
                 if (!targeter.IsPawnTargeting(casterPawn))
