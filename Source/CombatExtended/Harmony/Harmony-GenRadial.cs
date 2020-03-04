@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
-using Harmony;
+using HarmonyLib;
 using Verse;
 
 namespace CombatExtended.Harmony
@@ -39,7 +39,7 @@ namespace CombatExtended.Harmony
 			MethodInfo redoMethod = null;
 			
 			// patch the constructor.
-			HarmonyBase.instance.Patch(constructor, null, null, new HarmonyMethod(typeof(Harmony_GenRadial_RadialPatternCount), "Transpiler_RadialPatternCount"));
+			HarmonyBase.instance.PatchAll(constructor, null, null, new HarmonyMethod(typeof(Harmony_GenRadial_RadialPatternCount), "Transpiler_RadialPatternCount"));
 			
 			// patch all the methods.
 			foreach(MethodInfo method in methods)

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
-using Harmony;
+using HarmonyLib;
 using Verse;
 using RimWorld;
 using UnityEngine;
@@ -77,7 +77,7 @@ namespace CombatExtended.Harmony
                         && pawn.CanReach(patient, PathEndMode.InteractionCell, Danger.Deadly)
                         && patient.health.hediffSet.GetHediffsTendable().Any(h => h.CanBeStabilized()))
                     {
-                        if (pawn.story.WorkTypeIsDisabled(WorkTypeDefOf.Doctor))
+                        if (pawn.WorkTypeIsDisabled(WorkTypeDefOf.Doctor))
                         {
                             opts.Add(new FloatMenuOption("CE_CannotStabilize".Translate() + ": " + "IncapableOfCapacity".Translate(WorkTypeDefOf.Doctor.gerundLabel), null, MenuOptionPriority.Default));
                         }

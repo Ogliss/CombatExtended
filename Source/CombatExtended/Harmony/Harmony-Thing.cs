@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Harmony;
+using HarmonyLib;
 using Verse;
 
 namespace CombatExtended.Harmony
@@ -18,7 +18,7 @@ namespace CombatExtended.Harmony
             {
                 var ammoThing = ThingMaker.MakeThing(ammoUser.CurrentAmmo, null);
                 ammoThing.stackCount = ammoUser.CurMagCount;
-                __result = __result.Add(ammoThing);
+                __result = __result.AddItem(ammoThing);
             }
         }
     }

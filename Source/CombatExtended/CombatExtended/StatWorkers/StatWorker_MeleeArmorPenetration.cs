@@ -10,7 +10,7 @@ namespace CombatExtended
 {
     public class StatWorker_MeleeArmorPenetration : StatWorker_MeleeStats
     {
-        public override string GetStatDrawEntryLabel(StatDef stat, float value, ToStringNumberSense numberSense, StatRequest optionalReq)
+        public override string GetStatDrawEntryLabel(StatDef stat, float value, ToStringNumberSense numberSense, StatRequest optionalReq, bool finalized = true)
         {
             var tools = (optionalReq.Def as ThingDef)?.tools;
             if (tools.NullOrEmpty())

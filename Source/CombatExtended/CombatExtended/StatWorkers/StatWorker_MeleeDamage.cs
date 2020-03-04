@@ -11,7 +11,7 @@ namespace CombatExtended
     public class StatWorker_MeleeDamage : StatWorker_MeleeDamageBase
     {
 
-        public override string GetStatDrawEntryLabel(StatDef stat, float value, ToStringNumberSense numberSense, StatRequest optionalReq)
+        public override string GetStatDrawEntryLabel(StatDef stat, float value, ToStringNumberSense numberSense, StatRequest optionalReq, bool finalized = true)
         {
             var skilledDamageVariationMin = damageVariationMin;
             var skilledDamageVariationMax = damageVariationMax;

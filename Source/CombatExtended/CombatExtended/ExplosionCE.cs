@@ -20,6 +20,7 @@ namespace CombatExtended
         private const float PenAtEdge = 0.6f;
         private const float PressurePerDamage = 0.3f;
 		private static HashSet<IntVec3> tmpCells = new HashSet<IntVec3>();
+		private List<Thing> ignoredThings;
 
 		public override void SpawnSetup(Map map, bool respawningAfterLoad)
 		{
@@ -100,13 +101,14 @@ namespace CombatExtended
 			}
 		}
 		
-		public override void StartExplosion(SoundDef explosionSound)
+		public override void StartExplosion(SoundDef explosionSound, List<Thing> ignoredThings)
 		{
 			if (!Spawned) {
 				Log.Error("Called StartExplosion() on unspawned thing.");
 				return;
 			}
 			startTick = Find.TickManager.TicksGame;
+			this.ignoredThings = ignoredThings;
 			cellsToAffect.Clear();
 			damagedThings.Clear();
 			addedCellsAffectedOnlyByDamage.Clear();
@@ -160,10 +162,14 @@ namespace CombatExtended
 			Scribe_Values.Look<int>(ref startTick, "startTick", 0, false);
 			Scribe_Collections.Look<IntVec3>(ref cellsToAffect, "cellsToAffect", LookMode.Value, new object[0]);
 			Scribe_Collections.Look<Thing>(ref damagedThings, "damagedThings", LookMode.Reference, new object[0]);
+			Scribe_Collections.Look<Thing>(ref this.ignoredThings, "ignoredThings", LookMode.Reference, (object[]) Array.Empty<object>());
 			Scribe_Collections.Look<IntVec3>(ref addedCellsAffectedOnlyByDamage, "addedCellsAffectedOnlyByDamage", LookMode.Value);
 			if (Scribe.mode == LoadSaveMode.PostLoadInit) {
 				damagedThings.RemoveAll((Thing x) => x == null);
 			}
+			if (this.ignoredThings == null)
+        		return;
+      		this.ignoredThings.RemoveAll((Predicate<Thing>) (x => x == null));
 		}
 
 		private int GetCellAffectTick(IntVec3 cell)
@@ -177,7 +183,7 @@ namespace CombatExtended
             if (!flag && Rand.Chance(preExplosionSpawnChance) && c.Walkable(Map)) {
 				TrySpawnExplosionThing(preExplosionSpawnThingDef, c, preExplosionSpawnThingCount);
 			}
-			damType.Worker.ExplosionAffectCell(this, c, damagedThings, !flag);
+			damType.Worker.ExplosionAffectCell(this, c, damagedThings, this.ignoredThings, !flag);
 			if (!flag && Rand.Chance(postExplosionSpawnChance) && c.Walkable(Map)) {
 				TrySpawnExplosionThing(postExplosionSpawnThingDef, c, postExplosionSpawnThingCount);
 			}
@@ -196,7 +202,7 @@ namespace CombatExtended
 				return;
 			}
 			if (thingDef.IsFilth) {
-				FilthMaker.MakeFilth(c, Map, thingDef, count);
+				FilthMaker.TryMakeFilth(c, Map, thingDef, count);
 			}
 			else {
 				var thing = ThingMaker.MakeThing(thingDef, null);

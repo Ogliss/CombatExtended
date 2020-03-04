@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-using Harmony;
+using HarmonyLib;
 using Verse;
 using System;
 using System.Reflection.Emit;
@@ -68,7 +68,7 @@ namespace CombatExtended.Harmony
             var postfixRemove = typeof(Harmony_ThingOwner_Remove_Patch).GetMethod("Postfix");
 
             var baseType = typeof(Thing);
-            var types = baseType.AllSubclassesNonAbstract().Add(baseType);
+            var types = baseType.AllSubclassesNonAbstract().AddItem(baseType);
             foreach (Type current in types)
             {
                 var type = typeof(ThingOwner<>).MakeGenericType(current);
@@ -82,7 +82,7 @@ namespace CombatExtended.Harmony
         {
             var postfixBleedRate = typeof(Harmony_HediffWithComps_BleedRate_Patch).GetMethod("Postfix");
             var baseType = typeof(HediffWithComps);
-            var types = baseType.AllSubclassesNonAbstract().Add(baseType);
+            var types = baseType.AllSubclassesNonAbstract().AddItem(baseType);
             foreach (Type cur in types)
             {
                 instance.Patch(cur.GetProperty("BleedRate").GetGetMethod(), null, new HarmonyMethod(postfixBleedRate));

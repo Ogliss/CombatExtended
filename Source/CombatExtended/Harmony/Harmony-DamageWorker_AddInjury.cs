@@ -7,7 +7,7 @@ using System.Reflection.Emit;
 using Verse;
 using RimWorld;
 using UnityEngine;
-using Harmony;
+using HarmonyLib;
 
 namespace CombatExtended.Harmony
 {

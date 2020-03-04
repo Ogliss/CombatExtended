@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
-using Harmony;
+using HarmonyLib;
 using RimWorld;
 using Verse;
 using Verse.Noise;
@@ -58,9 +58,9 @@ namespace CombatExtended.Harmony
                         : def.fillPercent;
                     height *= CollisionVertical.MeterPerCellHeight;
 
-                    var newEntry = new StatDrawEntry(entry.category, "CE_CoverHeight".Translate(), height.ToStringByStyle(ToStringStyle.FloatMaxTwo) + " m", entry.DisplayPriorityWithinCategory)
+                    var newEntry = new StatDrawEntry(entry.category, (string)"CE_CoverHeight".Translate(), height.ToStringByStyle(ToStringStyle.FloatMaxTwo) + " m", entry.DisplayPriorityWithinCategory)
                     {
-                        overrideReportText = "CE_CoverHeightExplanation".Translate()
+                        overrideReportText = (string)"CE_CoverHeightExplanation".Translate()
                     };
 
                     AccessTools.Field(__instance.GetType(), "$current").SetValue(__instance, newEntry);
