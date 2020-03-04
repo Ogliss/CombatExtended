@@ -31,12 +31,13 @@ namespace CombatExtended
             base.ProcessInput(ev);
             SoundDefOf.Tick_Tiny.PlayOneShotOnCamera();
             Targeter targeter = Find.Targeter;
-            if (verb.CasterIsPawn && targeter.targetingVerb != null && targeter.targetingVerb.verbProps == verb.verbProps)
+            //TODO: test equality (may need to write an equality function)
+            if (verb.CasterIsPawn && targeter.targetingSource != null && targeter.targetingSource.GetVerb == verb)
             {
                 Pawn casterPawn = verb.CasterPawn;
                 if (!targeter.IsPawnTargeting(casterPawn))
                 {
-                    targeter.targetingVerbAdditionalPawns.Add(casterPawn);
+                    targeter.targetingSourceAdditionalPawns.Add(casterPawn);
                 }
             }
             else

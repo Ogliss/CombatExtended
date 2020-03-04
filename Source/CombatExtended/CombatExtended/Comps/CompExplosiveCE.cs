@@ -133,7 +133,8 @@ namespace CombatExtended
                 explosion.armorPenetration = explosion.damAmount * 0.1f;
                 explosion.damageFalloff = Props.damageFalloff;
                 explosion.chanceToStartFire = Props.chanceToStartFire;
-                explosion.StartExplosion(Props.soundExplode ?? Props.explosionDamageDef.soundExplosion);
+                //TODO: create an actual ignoredThings list
+                explosion.StartExplosion(Props.soundExplode ?? Props.explosionDamageDef.soundExplosion, new List<Thing>());
             }
         }
     }
