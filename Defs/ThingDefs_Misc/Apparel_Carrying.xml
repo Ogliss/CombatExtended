@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Name="ApparelCarryGearBase" Abstract="True">
+    <techLevel>Industrial</techLevel>
+    <category>Item</category>
+    <thingClass>Apparel</thingClass>
+    <selectable>True</selectable>
+    <pathCost>10</pathCost>
+    <useHitPoints>True</useHitPoints>
+    <graphicData>
+      <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+    </graphicData>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>2</DeteriorationRate>
+      <SellPriceFactor>0.5</SellPriceFactor>
+      <EquipDelay>2</EquipDelay>
+    </statBases>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>True</alwaysHaulable>
+    <tickerType>Never</tickerType>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+    </comps>
+    <recipeMaker>
+      <workSpeedStat>TailoringSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Tailor</effectWorking>
+      <soundWorking>Recipe_Tailor</soundWorking>
+      <recipeUsers>
+        <li>ElectricTailoringBench</li>
+        <li>HandTailoringBench</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+    </recipeMaker>
+    <thingCategories>
+      <li>Loadout</li>
+    </thingCategories>
+    <generateAllowChance>0.8</generateAllowChance>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelCarryGearBase">
+    <defName>Apparel_TacVest</defName>
+    <label>tactical vest</label>
+    <description>A loadbearing vest with a number of pouches to store magazines and other equipment.\n\nSpeeds up reloading but is quite bulky to wear.</description>
+    <graphicData>
+      <texPath>Things/Apparel/TacRigging/TacRigging</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <WorkToMake>8000</WorkToMake>
+      <Mass>2</Mass>
+      <Bulk>10</Bulk>
+      <WornBulk>5</WornBulk>
+      <EquipDelay>3.5</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <CarryBulk>30</CarryBulk>
+      <ReloadSpeed>0.1</ReloadSpeed>
+    </equippedStatOffsets>
+    <costList>
+      <Cloth>60</Cloth>
+    </costList>
+    <apparel>
+      <careIfWornByCorpse>false</careIfWornByCorpse>
+      <bodyPartGroups>
+        <li>Shoulders</li>
+      </bodyPartGroups>
+      <layers>
+        <li>Webbing</li>
+      </layers>
+      <tags>
+        <li>IndustrialMilitaryBasic</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <wornGraphicPath>Things/Apparel/TacRigging/TacRigging</wornGraphicPath>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelCarryGearBase">
+    <defName>Apparel_Backpack</defName>
+    <label>backpack</label>
+    <description>A comfortable and spacious backpack for storing all kinds of items.</description>
+    <graphicData>
+      <texPath>Things/Apparel/Backpack/Milpack</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <WorkToMake>8000</WorkToMake>
+      <Mass>1</Mass>
+      <Bulk>3</Bulk>
+    </statBases>
+    <equippedStatOffsets>
+      <CarryBulk>30</CarryBulk>
+    </equippedStatOffsets>
+    <costList>
+      <Cloth>40</Cloth>
+    </costList>
+    <apparel>
+      <careIfWornByCorpse>false</careIfWornByCorpse>
+      <bodyPartGroups>
+        <li>Shoulders</li>
+      </bodyPartGroups>
+      <layers>
+        <li>Backpack</li>
+      </layers>
+      <tags>
+        <li>IndustrialBasic</li>
+        <li>IndustrialMilitaryBasic</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <wornGraphicPath>Things/Apparel/Backpack/Milpack</wornGraphicPath>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="ApparelCarryGearBase">
+    <defName>Apparel_TribalBackpack</defName>
+    <label>tribal backpack</label>
+    <description>Primitive backpack made from animal furs, useful for storing items when travelling.</description>
+    <techLevel>Neolithic</techLevel>
+    <graphicData>
+      <texPath>Things/Apparel/TribalPack/Tribalpack</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <tradeability>Sellable</tradeability>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToMake>5000</WorkToMake>
+      <Mass>1</Mass>
+      <Bulk>3</Bulk>
+    </statBases>
+    <equippedStatOffsets>
+      <CarryBulk>15</CarryBulk>
+    </equippedStatOffsets>
+    <costStuffCount>20</costStuffCount>
+    <stuffCategories>
+      <li>Fabric</li>
+      <li>Leathery</li>
+    </stuffCategories>
+    <recipeMaker>
+      <recipeUsers>
+        <li>CraftingSpot</li>
+        <li>HandTailoringBench</li>
+        <li>ElectricTailoringBench</li>
+      </recipeUsers>
+    </recipeMaker>
+    <apparel>
+      <careIfWornByCorpse>false</careIfWornByCorpse>
+      <bodyPartGroups>
+        <li>Shoulders</li>
+      </bodyPartGroups>
+      <layers>
+        <li>Backpack</li>
+      </layers>
+      <tags>
+        <li>Neolithic</li>
+      </tags>
+      <wornGraphicPath>Things/Apparel/TribalPack/Tribalpack</wornGraphicPath>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_Options">
+      <options>
+        <li>
+          <weight>10</weight>
+          <only>RGBA(0.4,0.3,0.15,1)</only>
+        </li>
+        <li>
+          <weight>15</weight>
+          <only>RGBA(0.6,0.45,0.18,1)</only>
+        </li>
+        <li>
+          <weight>20</weight>
+          <only>RGBA(0.8,0.6,0.23,1)</only>
+        </li>
+      </options>
+    </colorGenerator>
+  </ThingDef>
+
+</Defs>

@@ -9,7 +9,7 @@ using RimWorld;
 using Verse.AI;
 using UnityEngine;
 
-namespace CombatExtended.Harmony
+namespace CombatExtended.HarmonyCE
 {
     [HarmonyPatch(typeof(WorkGiver_InteractAnimal), "TakeFoodForAnimalInteractJob", new Type[] { typeof(Pawn), typeof(Pawn) })]
     public class Harmony_WorkGiver_InteractAnimal_TakeFoodForAnimalInteractJob

@@ -22,7 +22,7 @@ using System.Collections.Generic;
  * 
  */
 
-namespace CombatExtended.Harmony
+namespace CombatExtended.HarmonyCE
 {
     public static class HarmonyBase
     {
@@ -37,25 +37,32 @@ namespace CombatExtended.Harmony
             get
             {
                 if (harmony == null)
-                    harmony = harmony = new Harmony("CombatExtended.Harmony");
+                    harmony = harmony = new Harmony("CombatExtended.HarmonyCE");
                 return harmony;
             }
         }
 
         public static void InitPatches()
         {
+            Log.Message("Combat Extended :: InitPatches");
             // Remove the remark on the following to debug all auto patches.
             //Harmony.DEBUG = true;
             instance.PatchAll(Assembly.GetExecutingAssembly());
+            Log.Message("Combat Extended :: InitPatches 1");
             // Keep the following remarked to also debug manual patches.
             //HarmonyInstance.DEBUG = false;
 
             // Manual patches
             PatchThingOwner();
+            Log.Message("Combat Extended :: InitPatches 2");
             PatchHediffWithComps();
+            Log.Message("Combat Extended :: InitPatches 3");
             Harmony_GenRadial_RadialPatternCount.Patch();
+            Log.Message("Combat Extended :: InitPatches 4");
             PawnColumnWorkers_Resize.Patch();
+            Log.Message("Combat Extended :: InitPatches 5");
             PawnColumnWorkers_SwapButtons.Patch();
+            Log.Message("Combat Extended :: InitPatches 6");
         }
 
         #region Patch helper methods

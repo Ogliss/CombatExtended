@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PawnKindDef Name="MercenaryBase" Abstract="True">
+    <race>Human</race>
+    <defaultFactionType>Pirate</defaultFactionType>
+    <backstoryCategories>
+      <li>Raider</li>
+    </backstoryCategories>
+    <chemicalAddictionChance>0.1</chemicalAddictionChance>
+    <invNutrition>2.55</invNutrition>
+    <itemQuality>Normal</itemQuality>
+    <backstoryCryptosleepCommonality>0.08</backstoryCryptosleepCommonality>
+    <maxGenerationAge>65</maxGenerationAge>
+    <combatEnhancingDrugsChance>0.15</combatEnhancingDrugsChance>
+    <combatEnhancingDrugsCount>
+      <min>0</min>
+      <max>2</max>
+    </combatEnhancingDrugsCount>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="MercenaryBase">
+    <defName>MercenaryMachineGunner</defName>
+    <label>mercenary machine gunner</label>
+    <combatPower>110</combatPower>
+    <gearHealthRange>
+      <min>0.7</min>
+      <max>2.3</max>
+    </gearHealthRange>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+      <li>IndustrialAdvanced</li>
+      <li>IndustrialMilitaryBasic</li>
+      <li>IndustrialMilitaryAdvanced</li>
+      <li>BeltDefensePop</li>
+    </apparelTags>
+    <apparelMoney>
+      <min>1500</min>
+      <max>2500</max>
+    </apparelMoney>
+    <apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+    <weaponMoney>
+      <min>450</min>
+      <max>500</max>
+    </weaponMoney>
+    <weaponTags>
+      <li>CE_MachineGun</li>
+    </weaponTags>
+    <techHediffsMoney>
+      <min>1000</min>
+      <max>1500</max>
+    </techHediffsMoney>
+    <combatEnhancingDrugsCount>
+      <min>0</min>
+      <max>2</max>
+    </combatEnhancingDrugsCount>
+    <techHediffsTags>
+      <li>Advanced</li>
+    </techHediffsTags>
+    <techHediffsChance>0.003</techHediffsChance>
+    <modExtensions>
+      <li Class="CombatExtended.LoadoutPropertiesExtension">
+        <primaryMagazineCount>
+          <min>1</min>
+          <max>3</max>
+        </primaryMagazineCount>
+        <forcedSidearm>
+          <sidearmMoney>
+            <min>100</min>
+            <max>200</max>
+          </sidearmMoney>
+          <weaponTags>
+            <li>CE_Sidearm_Melee</li>
+          </weaponTags>
+        </forcedSidearm>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+
+  <!-- ========== Tribals ========== -->
+
+  <PawnKindDef Name="TribalBase" Abstract="True">
+    <race>Human</race>
+    <defaultFactionType>TribeCivil</defaultFactionType>
+    <backstoryCategories>
+      <li>Tribal</li>
+    </backstoryCategories>
+    <maxGenerationAge>60</maxGenerationAge>
+    <chemicalAddictionChance>0.05</chemicalAddictionChance>
+    <invNutrition>2.55</invNutrition>
+    <invFoodDef>Pemmican</invFoodDef>
+    <apparelTags>
+      <li>Neolithic</li>
+    </apparelTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="TribalBase">
+    <defName>TribalGrenadier</defName>
+    <label>boomer</label>
+    <combatPower>60</combatPower>
+    <maxGenerationAge>40</maxGenerationAge>
+    <canBeSapper>true</canBeSapper>
+    <gearHealthRange>
+      <min>0.5</min>
+      <max>1.8</max>
+    </gearHealthRange>
+    <apparelMoney>
+      <min>180</min>
+      <max>350</max>
+    </apparelMoney>
+    <apparelRequired>
+      <li>Apparel_WarVeil</li>
+    </apparelRequired>
+    <apparelTags>
+      <li>Tribal</li>
+    </apparelTags>
+    <weaponMoney>
+      <min>60</min>
+      <max>400</max>
+    </weaponMoney>
+    <weaponTags>
+      <li>CE_GrenadeNeolithic</li>
+    </weaponTags>
+    <modExtensions>
+      <li Class="CombatExtended.LoadoutPropertiesExtension">
+        <primaryMagazineCount>
+          <min>10</min>
+          <max>30</max>
+        </primaryMagazineCount>
+        <forcedSidearm>
+          <sidearmMoney>
+            <min>80</min>
+            <max>160</max>
+          </sidearmMoney>
+          <weaponTags>
+            <li>CE_Sidearm_Tribal</li>
+          </weaponTags>
+        </forcedSidearm>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="TribalBase">
+    <defName>TribalGunner</defName>
+    <label>thunderer</label>
+    <combatPower>60</combatPower>
+    <minGenerationAge>25</minGenerationAge>
+    <maxGenerationAge>45</maxGenerationAge>
+    <gearHealthRange>
+      <min>0.5</min>
+      <max>1.8</max>
+    </gearHealthRange>
+    <apparelMoney>
+      <min>180</min>
+      <max>350</max>
+    </apparelMoney>
+    <apparelTags>
+      <li>Tribal</li>
+    </apparelTags>
+    <apparelRequired>
+      <li>Apparel_WarMask</li>
+    </apparelRequired>
+    <weaponMoney>
+      <min>180</min>
+      <max>290</max>
+    </weaponMoney>
+    <weaponTags>
+      <li>Gun</li>
+    </weaponTags>
+    <modExtensions>
+      <li Class="CombatExtended.LoadoutPropertiesExtension">
+        <primaryMagazineCount>
+          <min>2</min>
+          <max>4</max>
+        </primaryMagazineCount>
+        <shieldMoney>
+          <min>120</min>
+          <max>160</max>
+        </shieldMoney>
+        <shieldTags>
+          <li>TribalShield</li>
+        </shieldTags>
+        <shieldChance>0.9</shieldChance>
+        <sidearms>
+          <li>
+            <sidearmMoney>
+              <min>100</min>
+              <max>600</max>
+            </sidearmMoney>
+            <weaponTags>
+              <li>CE_Sidearm_Tribal</li>
+            </weaponTags>
+          </li>
+        </sidearms>
+      </li>
+    </modExtensions>
+  </PawnKindDef>
+
+</Defs>

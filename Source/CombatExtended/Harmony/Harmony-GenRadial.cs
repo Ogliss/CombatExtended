@@ -6,7 +6,7 @@ using System.Reflection.Emit;
 using HarmonyLib;
 using Verse;
 
-namespace CombatExtended.Harmony
+namespace CombatExtended.HarmonyCE
 {
 	/* Targetting Verse.GenRadial.RadialPatternCount constant.
 	 * Specifically this looks for all methods which use that constant and patches them (since the constant is compiled in).
@@ -39,7 +39,7 @@ namespace CombatExtended.Harmony
 			MethodInfo redoMethod = null;
 			
 			// patch the constructor.
-			HarmonyBase.instance.PatchAll(constructor, null, null, new HarmonyMethod(typeof(Harmony_GenRadial_RadialPatternCount), "Transpiler_RadialPatternCount"));
+			HarmonyBase.instance.Patch(constructor, null, null, new HarmonyMethod(typeof(Harmony_GenRadial_RadialPatternCount), "Transpiler_RadialPatternCount"));
 			
 			// patch all the methods.
 			foreach(MethodInfo method in methods)

@@ -7,7 +7,7 @@ using Verse;
 using UnityEngine;
 using HarmonyLib;
 
-namespace CombatExtended.Harmony
+namespace CombatExtended.HarmonyCE
 {
     // FIXME: Destructive detour
     [HarmonyPatch(typeof(Hediff_MissingPart))]

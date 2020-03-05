@@ -6,7 +6,7 @@ using System.Reflection.Emit;
 using HarmonyLib;
 using Verse;
 
-namespace CombatExtended.Harmony
+namespace CombatExtended.HarmonyCE
 {
     [HarmonyPatch(typeof(ExplosionCE), "GetDamageAmountAt")]
     public static class Harmony_ExplosionCE_GetDamageAmountAt

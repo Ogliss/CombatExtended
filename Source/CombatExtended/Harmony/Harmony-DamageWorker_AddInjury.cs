@@ -9,7 +9,7 @@ using RimWorld;
 using UnityEngine;
 using HarmonyLib;
 
-namespace CombatExtended.Harmony
+namespace CombatExtended.HarmonyCE
 {
     [HarmonyPatch(typeof(DamageWorker_AddInjury), "ApplyDamageToPart")]
     internal static class Harmony_DamageWorker_AddInjury_ApplyDamageToPart
@@ -30,41 +30,60 @@ namespace CombatExtended.Harmony
 
         internal static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
+            Log.Message("CE ApplyDamageToPart :: InitPatches ");
             var codes = instructions.ToList();
+            Log.Message("CE ApplyDamageToPart :: InitPatches 1");
 
             // Find armor block
-            var armorBlockEnd = codes.FirstIndexOf(c => c.operand == typeof(ArmorUtility).GetMethod(nameof(ArmorUtility.GetPostArmorDamage)));
+            var armorBlockEnd = codes.FirstIndexOf(c => (MethodInfo)c.operand == typeof(ArmorUtility).GetMethod(nameof(ArmorUtility.GetPostArmorDamage)));
+            Log.Message("CE ApplyDamageToPart :: InitPatches 2");
             int armorBlockStart = -1;
+            Log.Message("CE ApplyDamageToPart :: InitPatches 3");
             for (int i = armorBlockEnd; i > 0; i--)
             {
+                Log.Message("CE ApplyDamageToPart :: InitPatches 3.1");
                 // Find OpCode loading up first argument for GetPostArmorDamage (Pawn)
                 if (codes[i].opcode == OpCodes.Ldarg_2)
                 {
+                    Log.Message("CE ApplyDamageToPart :: InitPatches 3.1.1");
                     armorBlockStart = i;
+                    Log.Message("CE ApplyDamageToPart :: InitPatches 3.1.2");
                     break;
                 }
+                Log.Message("CE ApplyDamageToPart :: InitPatches 3.2");
             }
+            Log.Message("CE ApplyDamageToPart :: InitPatches 4");
             if (armorBlockStart == -1)
             {
+                Log.Message("CE ApplyDamageToPart :: InitPatches 4.1");
                 Log.Error("CE failed to transpile DamageWorker_AddInjury: could not identify armor block start");
                 return instructions;
             }
 
+            Log.Message("CE ApplyDamageToPart :: InitPatches 5");
             // Replace armor block with our new instructions
             var armorCodes = codes.GetRange(armorBlockStart, armorBlockEnd - armorBlockStart);
+            Log.Message("CE ApplyDamageToPart :: InitPatches 6");
 
             foreach (var index in ArmorBlockNullOps)
             {
+                Log.Message("CE ApplyDamageToPart :: InitPatches 6.1");
                 armorCodes[index].opcode = OpCodes.Nop;
+                Log.Message("CE ApplyDamageToPart :: InitPatches 6.2");
                 armorCodes[index].operand = null;
+                Log.Message("CE ApplyDamageToPart :: InitPatches 6.3");
             }
 
+            Log.Message("CE ApplyDamageToPart :: InitPatches 7");
             // Override armor method call
             codes[armorBlockEnd].operand = typeof(Harmony_DamageWorker_AddInjury_ApplyDamageToPart).GetMethod(nameof(ArmorReroute), AccessTools.all);
 
+            Log.Message("CE ApplyDamageToPart :: InitPatches 8");
             // Prevent vanilla code from overriding changed damageDef
             codes[armorBlockEnd + 3] = new CodeInstruction(OpCodes.Call, typeof(DamageInfo).GetMethod($"get_{nameof(DamageInfo.Def)}"));
+            Log.Message("CE ApplyDamageToPart :: InitPatches 9");
             codes[armorBlockEnd + 4] = new CodeInstruction(OpCodes.Stloc_S, 5);
+            Log.Message("CE ApplyDamageToPart :: InitPatches 10");
 
             // Our method returns a Dinfo instead of float, we want to insert a call to Dinfo.Amount before stloc at ArmorBlockEnd+1
             codes.InsertRange(armorBlockEnd + 1, new[]
@@ -72,6 +91,7 @@ namespace CombatExtended.Harmony
                 new CodeInstruction(OpCodes.Ldarga_S, 1),
                 new CodeInstruction(OpCodes.Call, typeof(DamageInfo).GetMethod($"get_{nameof(DamageInfo.Amount)}"))
             });
+            Log.Message("CE ApplyDamageToPart :: InitPatches 11");
 
             return codes;
         }

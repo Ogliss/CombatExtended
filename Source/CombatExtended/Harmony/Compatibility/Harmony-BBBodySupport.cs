@@ -7,7 +7,7 @@ using Verse;
 using System.Reflection.Emit;
 using System;
 
-namespace CombatExtended.Harmony.Compatibility
+namespace CombatExtended.HarmonyCE.Compatibility
 {
     [HarmonyPatch]
     class Harmony_Compat_BBBodySupport

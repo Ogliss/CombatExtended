@@ -7,7 +7,7 @@ using Verse;
 using UnityEngine;
 using HarmonyLib;
 
-namespace CombatExtended.Harmony
+namespace CombatExtended.HarmonyCE
 {
     // Need to patch all methods that can modify pawn's inventory to refresh CompInventory cache when it happens
 
