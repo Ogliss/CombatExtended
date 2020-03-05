@@ -4,7 +4,7 @@ using System.Reflection.Emit;
 using HarmonyLib;
 using Verse;
 
-namespace CombatExtended.CEHarmony
+namespace CombatExtended.Harmony
 {
 	/* Targetting Verse.HediffComp_TendDuration.CompTended
 	 * Specifically the (decompiled) line this.tendQuality = Mathf.Clamp01(quality + Rand.Range(-0.25f, 0.25f));

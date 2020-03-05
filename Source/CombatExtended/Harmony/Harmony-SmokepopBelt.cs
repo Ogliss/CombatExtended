@@ -7,7 +7,7 @@ using Verse;
 using UnityEngine;
 using HarmonyLib;
 
-namespace CombatExtended.CEHarmony
+namespace CombatExtended.Harmony
 {
     // FIXME: Destructive detour
     [HarmonyPatch(typeof(SmokepopBelt), "CheckPreAbsorbDamage")]

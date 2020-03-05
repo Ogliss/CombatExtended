@@ -5,7 +5,7 @@ using System.Text;
 using HarmonyLib;
 using Verse;
 
-namespace CombatExtended.CEHarmony
+namespace CombatExtended.Harmony
 {
     [HarmonyPatch(typeof(Thing), "SmeltProducts")]
     public class Harmony_Thing_SmeltProducts

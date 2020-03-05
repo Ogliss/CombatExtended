@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using Verse;
 
-namespace CombatExtended.CEHarmony
+namespace CombatExtended.Harmony
 {
     [HarmonyPatch(typeof(JobGiver_PickUpOpportunisticWeapon), "ShouldEquip")]
     internal static class Harmony_JobGiver_PickUpOpportunisticWeapon

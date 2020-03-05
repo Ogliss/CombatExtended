@@ -3,7 +3,7 @@ using Verse;
 using RimWorld;
 using Verse.AI;
 
-namespace CombatExtended.CEHarmony
+namespace CombatExtended.Harmony
 {
     [HarmonyPatch(typeof(ShieldBelt), "AllowVerbCast")]
     internal static class ShieldBelt_PatchAllowVerbCast

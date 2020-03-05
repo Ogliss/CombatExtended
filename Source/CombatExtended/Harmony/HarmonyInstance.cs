@@ -2,7 +2,7 @@
 using System;
 using System.Reflection;
 
-namespace CombatExtended.CEHarmony
+namespace CombatExtended.Harmony
 {
     internal class HarmonyInstance
     {

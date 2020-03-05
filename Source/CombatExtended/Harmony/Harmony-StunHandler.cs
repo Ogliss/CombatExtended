@@ -7,7 +7,7 @@ using Verse;
 using UnityEngine;
 using HarmonyLib;
 
-namespace CombatExtended.CEHarmony
+namespace CombatExtended.Harmony
 {
     [HarmonyPatch(typeof(StunHandler), "Notify_DamageApplied")]
     public static class Harmony_StunHandler_Notify_DamageApplied

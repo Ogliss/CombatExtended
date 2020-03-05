@@ -6,7 +6,7 @@ using System.Reflection.Emit;
 using HarmonyLib;
 using Verse;
 
-namespace CombatExtended.CEHarmony
+namespace CombatExtended.Harmony
 {
 	/* Targetting Verse.GenRadial.RadialPatternCount constant.
 	 * Specifically this looks for all methods which use that constant and patches them (since the constant is compiled in).

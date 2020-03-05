@@ -8,7 +8,7 @@ using UnityEngine;
 using HarmonyLib;
 using System.Reflection;
 
-namespace CombatExtended.CEHarmony
+namespace CombatExtended.Harmony
 {
     [HarmonyPatch]
     public static class Harmony_ThingDefGenerator_Meat

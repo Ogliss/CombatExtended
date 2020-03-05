@@ -22,13 +22,13 @@ using Verse.AI;
  * A couple of helper functions to turn a bunch of ifs into a single call since IL can use one of 6 instructions for local variable load/save.
  */
 
-namespace CombatExtended.CEHarmony
+namespace CombatExtended.Harmony
 {
     [HarmonyPatch(typeof(JobDriver_Wait), "CheckForAutoAttack")]
     static class Harmony_JobDriverWait_CheckForAutoAttack
     {
         static readonly string logPrefix = Assembly.GetExecutingAssembly().GetName().Name + " :: " + typeof(Harmony_JobDriverWait_CheckForAutoAttack).Name + " :: ";
-        //static DynamicMethod Patched_ClosestThingTarget_Global = null;
+        //static MethodInfo Patched_ClosestThingTarget_Global = null;
 
         /// <summary>
         /// Transpiler runs through the IL code of the method CheckForAutoAttack and makes some tweaks to a call so as to avoid having the pawn attack a target it can't hit.

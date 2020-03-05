@@ -7,7 +7,7 @@ using Verse;
 using UnityEngine;
 using HarmonyLib;
 
-namespace CombatExtended.CEHarmony
+namespace CombatExtended.Harmony
 {
     [HarmonyPatch(typeof(WorkGiver_HunterHunt), "HasHuntingWeapon")]
     public class Harmony_WorkGiver_HunterHunt_HasHuntingWeapon_Patch

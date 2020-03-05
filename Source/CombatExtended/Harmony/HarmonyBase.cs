@@ -22,7 +22,7 @@ using System.Collections.Generic;
  * 
  */
 
-namespace CombatExtended.CEHarmony
+namespace CombatExtended.Harmony
 {
     public static class HarmonyBase
     {
@@ -37,7 +37,7 @@ namespace CombatExtended.CEHarmony
             get
             {
                 if (harmony == null)
-                    harmony = harmony = new Harmony("CombatExtended.CEHarmony");
+                    harmony = harmony = new Harmony("CombatExtended.Harmony");
                 return harmony;
             }
         }
@@ -45,7 +45,7 @@ namespace CombatExtended.CEHarmony
         public static void InitPatches()
         {
             // Remove the remark on the following to debug all auto patches.
-            //HarmonyInstance.DEBUG = true;
+            //Harmony.DEBUG = true;
             instance.PatchAll(Assembly.GetExecutingAssembly());
             // Keep the following remarked to also debug manual patches.
             //HarmonyInstance.DEBUG = false;

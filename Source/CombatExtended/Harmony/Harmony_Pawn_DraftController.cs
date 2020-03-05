@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using Verse.AI;
 
-namespace CombatExtended.CEHarmony
+namespace CombatExtended.Harmony
 {
     [HarmonyPatch(typeof(Pawn_DraftController), nameof(Pawn_DraftController.FireAtWill), MethodType.Setter)]
     class Harmony_Pawn_DraftController_StopAttackJobsOnHoldFire

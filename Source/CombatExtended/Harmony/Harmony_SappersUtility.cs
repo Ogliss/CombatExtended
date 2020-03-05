@@ -2,7 +2,7 @@
 using RimWorld;
 using Verse;
 
-namespace CombatExtended.CEHarmony
+namespace CombatExtended.Harmony
 {
     [HarmonyPatch(typeof(SappersUtility), "CanMineReasonablyFast")]
     internal static class Harmony_SappersUtility

@@ -8,7 +8,7 @@ using Verse;
 // ReSharper disable InlineOutVariableDeclaration
 // ReSharper disable UsePatternMatching
 
-namespace CombatExtended.CEHarmony
+namespace CombatExtended.Harmony
 {
     [HarmonyPatch]
     public static class Harmony_TurretGunUtility

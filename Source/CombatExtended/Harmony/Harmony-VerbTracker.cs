@@ -4,7 +4,7 @@ using HarmonyLib;
 using System.Reflection.Emit;
 using System.Reflection;
 
-namespace CombatExtended.CEHarmony
+namespace CombatExtended.Harmony
 {
     /* Dev Notes:
      * The target code should look like this (high level view)

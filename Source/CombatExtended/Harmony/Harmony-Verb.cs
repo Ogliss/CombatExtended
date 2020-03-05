@@ -6,7 +6,7 @@ using HarmonyLib;
 using Verse;
 using RimWorld;
 
-namespace CombatExtended.CEHarmony
+namespace CombatExtended.Harmony
 {
     [HarmonyPatch(typeof(Verb), "IsStillUsableBy")]
     internal static class Harmony_Verb

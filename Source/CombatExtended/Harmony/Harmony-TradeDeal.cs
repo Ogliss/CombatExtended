@@ -7,7 +7,7 @@ using RimWorld;
 using UnityEngine;
 using System.Reflection;
 
-namespace CombatExtended.CEHarmony
+namespace CombatExtended.Harmony
 {
 	/* Dev Notes:
      * Goal is to change the RoundToInt into RoundToCeil.

@@ -7,7 +7,7 @@ using System.Reflection.Emit;
 using System.Text;
 using Verse;
 
-namespace CombatExtended.CEHarmony
+namespace CombatExtended.Harmony
 {
     [HarmonyPatch(typeof(PawnGraphicSet), "MatsBodyBaseAt")]
     internal static class Harmony_PawnGraphicSet

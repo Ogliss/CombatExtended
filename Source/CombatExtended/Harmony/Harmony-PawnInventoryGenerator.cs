@@ -7,7 +7,7 @@ using Verse;
 using UnityEngine;
 using HarmonyLib;
 
-namespace CombatExtended.CEHarmony
+namespace CombatExtended.Harmony
 {
     [HarmonyPatch(typeof(PawnInventoryGenerator), "GenerateInventoryFor")]
     static class Harmony_PawnInventoryGenerator_GenerateInventoryFor

@@ -7,7 +7,7 @@ using Verse;
 using UnityEngine;
 using HarmonyLib;
 
-namespace CombatExtended.CEHarmony
+namespace CombatExtended.Harmony
 {
     [HarmonyPatch(typeof(TooltipUtility), "ShotCalculationTipString")]
     public class Harmony_TooltipUtility_ShotCalculationTipString_Patch

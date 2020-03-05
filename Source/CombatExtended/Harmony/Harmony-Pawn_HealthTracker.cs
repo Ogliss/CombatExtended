@@ -5,7 +5,7 @@ using System.Reflection.Emit;
 using System.Reflection;
 using System.Linq;
 
-namespace CombatExtended.CEHarmony
+namespace CombatExtended.Harmony
 {
     /* Dev Notes:
      * The goal in this case is to remove the RNG death event.

@@ -7,7 +7,7 @@ using RimWorld;
 using Verse;
 using Verse.Noise;
 
-namespace CombatExtended.CEHarmony
+namespace CombatExtended.Harmony
 {
     [HarmonyPatch]
     internal static class HarmonyThingDef
