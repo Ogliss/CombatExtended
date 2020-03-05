@@ -35,7 +35,7 @@ namespace CombatExtended.HarmonyCE
             Log.Message("CE ApplyDamageToPart :: InitPatches 1");
 
             // Find armor block
-            var armorBlockEnd = codes.FirstIndexOf(c => (MethodInfo)c.operand == typeof(ArmorUtility).GetMethod(nameof(ArmorUtility.GetPostArmorDamage)));
+            var armorBlockEnd = codes.FirstIndexOf(c => c.operand == typeof(ArmorUtility).GetMethod("GetPostArmorDamage"));
             Log.Message("CE ApplyDamageToPart :: InitPatches 2");
             int armorBlockStart = -1;
             Log.Message("CE ApplyDamageToPart :: InitPatches 3");
